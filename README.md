@@ -1,7 +1,7 @@
 tarp-discover
 =============
 
-A Tent entity discovery service compatible with Tarp.js
+A Tent entity discovery service compatible with [Tarp.js](https://github.com/Zatnosk/Tarp.js).
 
 Usage
 -----
