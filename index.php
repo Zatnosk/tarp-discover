@@ -8,9 +8,10 @@ header('Access-Control-Allow-Methods: GET');
 if(!isset($_GET['entity'])){
 	header('HTTP/1.0 400 Bad Request');
 	header('Link: <?entity=some-entity-uri>, rel="Usage";');
+	include('readme.html')
 	die();
 }
-$entity = $_GET['entity'];
+$entity = urldecode($_GET['entity']);
 $ch = curl_init($entity);
 curl_setopt_array($ch, array(
 	CURLOPT_HEADER => TRUE,

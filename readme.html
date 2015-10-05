@@ -1,0 +1,72 @@
+<html>
+<head>
+	<title>Tarp-Discover</title>
+	<style>
+	:root{
+		font-family: sans-serif;
+	}
+	body {
+		padding: 1.5rem;
+		max-width: 800px;
+		margin: auto;
+	}
+	h1, h2 {
+		margin: 0;
+		padding-bottom: 0.5rem;
+		margin-bottom: 1rem;
+		line-height: 1.2em;
+		border-bottom: 1px solid #EEE;
+	}
+	h1 {
+		font-size: 2.25rem;
+	}
+	h2 {
+		font-size: 1.75rem;
+	}
+	p {
+		margin-bottom: 1rem;
+		line-height: 1.6em;
+	}
+	span.code, table {
+		font-family: monospace;
+	}
+	td {
+		font-size: 0.7rem;
+	}
+	td:not(:first-child) {
+		padding-left: 3rem;
+	}
+	</style>
+</head>
+<body>
+	<h1>Tarp-Discover</h1>
+	<p>A standalone tool built for <a href="https://github.com/zatnosk/tarp.js">Tarp.js</a>. The sourcecode for this tool is available at <a href="https://github.com/zatnosk/tarp-discover">GitHub / Zatnosk / Tarp-Discover</a>.</p>
+	<h2>About</h2>
+	<p>This page is a discovery proxy for the Tent protocol, made to ensure that JavaScript based apps can discover a Tent-entity's metapost, without depending on the server at the entity's location supporting CORS.
+	Read more about the discovery process in the Tent protocol in its <a href="https://tent.io/docs/servers-entities#discovery">documentation</a>.</p>
+	<h2>Usage</h2>
+	<p>This page expects a query string with the parameter <span class="code">entity</span> set to a URL encoded a Tent entity.
+	<p>If a valid meta-post is found, it is returned as the only content in the reply.<br>
+		If a valid meta-post is NOT found, a <span class="code">404 Not Found</span> status is returned with an empty document.<br>
+		If the parameter entity is not set, a <span class="code">400 Bad Request</span> status is return, and this page is shown.
+	<h2>Examples</h2>
+	<table>
+		<tr>
+			<td>entity URL</td>
+			<td>?entity=&lt;entityURL&gt;</td>
+		</tr>
+		<tr>
+			<td>https://mytent.example.com</td>
+			<td>?entity=https%3A%2F%2Fmytent.example.com</td>
+		</tr>
+		<tr>
+			<td>https://tentserver.example/username</td>
+			<td>?entity=https%3A%2F%2Ftentserver.example%2Fusername</td>
+		</tr>
+		<tr>
+			<td>https://example.com/tent.php?user=username</td>
+			<td>?entity=https%3A%2F%2Fexample.com%2Ftent.php%3Fuser%3Dusername</td>
+		</tr>
+	</table>
+</body>
+</html>
