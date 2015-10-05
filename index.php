@@ -8,7 +8,7 @@ header('Access-Control-Allow-Methods: GET');
 if(!isset($_GET['entity'])){
 	header('HTTP/1.0 400 Bad Request');
 	header('Link: <?entity=some-entity-uri>, rel="Usage";');
-	include('readme.html')
+	include('readme.html');
 	die();
 }
 $entity = urldecode($_GET['entity']);
